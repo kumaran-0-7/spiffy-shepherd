@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2f7f4"/>
+      <stop offset="100%" stop-color="#e3ecdd"/>
+    </linearGradient>
+    <linearGradient id="node3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7faf5"/>
+    </linearGradient>
+    <linearGradient id="deep3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a6345"/>
+      <stop offset="100%" stop-color="#263d2c"/>
+    </linearGradient>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#dce5d7" stroke-width="1" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg3)"/>
+  <rect width="1200" height="900" fill="url(#grid3)"/>
+
+  <!-- panel -->
+  <rect x="90" y="80" width="1020" height="740" rx="28" fill="#ffffff" stroke="#dce5d7" stroke-width="2"/>
+  <rect x="90" y="80" width="1020" height="72" fill="#f7faf5"/>
+  <rect x="90" y="124" width="1020" height="28" fill="#f7faf5"/>
+  <circle cx="132" cy="116" r="7" fill="#c3d6bd"/>
+  <circle cx="158" cy="116" r="7" fill="#dce5d7"/>
+  <circle cx="184" cy="116" r="7" fill="#eaf1e5"/>
+  <text x="240" y="122" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" fill="#263d2c">AI Workflow Builder</text>
+  <rect x="930" y="98" width="150" height="38" rx="10" fill="#4a6345"/>
+  <text x="1005" y="123" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Run workflow</text>
+
+  <!-- connectors -->
+  <path d="M 320 300 H 430" stroke="#91ad86" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+  <path d="M 640 300 H 750" stroke="#91ad86" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+  <path d="M 840 380 V 480 H 580 V 520" stroke="#91ad86" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+
+  <!-- node 1 trigger -->
+  <rect x="160" y="240" width="160" height="120" rx="16" fill="url(#node3)" stroke="#dce5d7" stroke-width="2"/>
+  <circle cx="196" cy="276" r="14" fill="#eaf1e5"/>
+  <text x="196" y="281" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#4a6345" text-anchor="middle">1</text>
+  <text x="224" y="281" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#263d2c">Trigger</text>
+  <text x="184" y="312" font-family="Inter, Arial, sans-serif" font-size="13" fill="#697568">New email arrives</text>
+  <rect x="184" y="326" width="112" height="20" rx="10" fill="#f2f7f4"/>
+
+  <!-- node 2 LLM -->
+  <rect x="430" y="240" width="210" height="120" rx="16" fill="url(#node3)" stroke="#91ad86" stroke-width="2"/>
+  <circle cx="466" cy="276" r="14" fill="#eaf1e5"/>
+  <text x="466" y="281" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#4a6345" text-anchor="middle">2</text>
+  <text x="494" y="281" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#263d2c">LLM Extract</text>
+  <text x="454" y="312" font-family="Inter, Arial, sans-serif" font-size="13" fill="#697568">Parse invoice data</text>
+  <rect x="454" y="326" width="160" height="20" rx="10" fill="#eaf1e5"/>
+
+  <!-- node 3 -->
+  <rect x="750" y="240" width="180" height="140" rx="16" fill="url(#deep3)"/>
+  <circle cx="786" cy="278" r="14" fill="#91ad86"/>
+  <text x="786" y="283" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="814" y="283" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#ffffff">Sheets Sync</text>
+  <text x="774" y="316" font-family="Inter, Arial, sans-serif" font-size="13" fill="#c3d6bd">Append to ledger</text>
+  <text x="774" y="342" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#c3d6bd">✓ 1,284 rows</text>
+
+  <!-- node 4 -->
+  <rect x="460" y="520" width="240" height="140" rx="16" fill="url(#node3)" stroke="#dce5d7" stroke-width="2"/>
+  <circle cx="496" cy="558" r="14" fill="#eaf1e5"/>
+  <text x="496" y="563" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#4a6345" text-anchor="middle">4</text>
+  <text x="524" y="563" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#263d2c">Send Summary</text>
+  <text x="484" y="596" font-family="Inter, Arial, sans-serif" font-size="13" fill="#697568">Slack notification to team</text>
+  <rect x="484" y="612" width="192" height="20" rx="10" fill="#f2f7f4"/>
+
+  <!-- stats strip -->
+  <rect x="90" y="740" width="1020" height="1" fill="#dce5d7"/>
+  <text x="130" y="796" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#91ad86" letter-spacing="1">RUNS TODAY</text>
+  <text x="130" y="822" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#263d2c">184</text>
+  <text x="330" y="796" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#91ad86" letter-spacing="1">SUCCESS RATE</text>
+  <text x="330" y="822" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#263d2c">99.2%</text>
+  <text x="620" y="796" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#91ad86" letter-spacing="1">HOURS SAVED</text>
+  <text x="620" y="822" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#263d2c">32h/wk</text>
+</svg>

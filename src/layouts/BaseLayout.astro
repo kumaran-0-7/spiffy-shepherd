@@ -1,0 +1,39 @@
+---
+import { withBase } from "../lib/paths";
+
+const { title = "Kumaran | Full-Stack Developer", description = "I build digital experiences, intelligent applications and automation systems that turn ideas into practical solutions.", pathname } = Astro.props;
+const canonicalUrl = new URL(withBase(pathname || Astro.url.pathname), Astro.site ?? "https://kumaran-0-7.github.io").href;
+---
+
+<html lang="en" class="font-sans antialiased">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+    <link rel="icon" href={withBase("/favicon.ico")} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <title>{title}</title>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-sage-200 selection:text-sage-900">
+    <slot />
+</body>
+</html>

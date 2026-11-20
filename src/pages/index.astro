@@ -1,0 +1,268 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectFilters from "../components/ProjectFilters.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { withBase } from "../lib/paths";
+
+import "../styles/global.css";
+---
+
+<BaseLayout title="Kumaran | Full-Stack Developer & AI Specialist">
+    <Nav />
+
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between gap-12 py-20">
+            <div class="md:w-3/5 space-y-8 reveal-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-100 text-sage-700 text-xs font-bold uppercase tracking-widest border border-sage-200">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sage-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-sage-500"></span>
+                    </span>
+                    Available for new projects
+                </div>
+
+                <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter text-sage-900 leading-[0.9]">
+                    Full-Stack <br />
+                    <span class="text-sage-400 italic font-medium">Developer.</span>
+                </h1>
+
+                <div class="space-y-4">
+                    <p class="text-xl md:text-2xl text-sage-700 font-medium tracking-tight">
+                        Prompt Engineer | AI Automation Developer
+                    </p>
+                    <p class="text-lg text-sage-600 leading-relaxed max-w-xl">
+                        Building modern web experiences and intelligent AI-powered solutions that turn complex ideas into practical, automated workflows.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="btn-primary px-8 py-4 text-lg">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn-secondary px-8 py-4 text-lg">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-2/5 w-full max-w-md reveal-up reveal-up-delay-2">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-sage-200 rounded-[2rem] rotate-6 group-hover:rotate-2 transition-transform duration-500"></div>
+                    <div class="relative overflow-hidden rounded-[2rem] bg-white p-2 shadow-2xl border border-sage-100 float">
+                        <img
+                            src={withBase("/kumaran.webp")}
+                            alt="Kumaran"
+                            class="rounded-[1.5rem] w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        />
+                    </div>
+                    <!-- Stats badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-sage-100 reveal-up reveal-up-delay-4">
+                        <p class="text-xs font-bold text-sage-400 uppercase tracking-widest mb-1">Focus</p>
+                        <p class="text-sage-900 font-bold">AI & Automation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 border-t border-sage-200 reveal-up">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-sage-400 mb-8">About Me</h2>
+                    <p class="text-3xl md:text-5xl font-bold tracking-tighter text-sage-900 leading-tight">
+                        I bridge the gap between creative design, robust code, and intelligent systems.
+                    </p>
+                </div>
+                <div class="space-y-6 text-lg text-sage-600 leading-relaxed pt-12">
+                    <p>
+                        I am a Full-Stack Web Developer, Prompt Engineer, and AI Automation Developer. I specialize in building modern web applications, AI-powered solutions, and automated workflows.
+                    </p>
+                    <p>
+                        My approach combines technical precision with a deep understanding of how AI can enhance human productivity. I don't just write code; I engineer solutions that evolve with your needs.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 pt-8">
+                        <div>
+                            <p class="text-3xl font-bold text-sage-900 tracking-tighter">Mixed</p>
+                            <p class="text-sm font-medium text-sage-400 uppercase tracking-widest">Stack Expertise</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-sage-900 tracking-tighter">AI-First</p>
+                            <p class="text-sm font-medium text-sage-400 uppercase tracking-widest">Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-32 border-t border-sage-200">
+            <div class="flex justify-between items-end mb-16 reveal-up">
+                <div>
+                    <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-sage-400 mb-4">Selected Work</h2>
+                    <h3 class="text-4xl md:text-6xl font-bold tracking-tighter text-sage-900">Featured Projects</h3>
+                </div>
+                <div class="hidden md:block">
+                    <a href={withBase("/work")} class="nav-link text-lg">View Archive →</a>
+                </div>
+            </div>
+
+            <ProjectFilters />
+
+            <div class="grid md:grid-cols-2 gap-12" data-project-grid>
+                <div class="reveal-up" data-project-item data-project-category="web">
+                    <ProjectCard
+                        title="AptiQuest"
+                        description="An interactive, game-based educational website for college students that makes learning engaging and competitive through real-time challenges and rewards."
+                        tech={["React", "Node.js", "MongoDB", "Socket.io"]}
+                        image="/projects/attitude-learning.webp"
+                        href="/work/aptiquest"
+                    />
+                </div>
+                <div class="reveal-up reveal-up-delay-2 md:mt-24" data-project-item data-project-category="web">
+                    <ProjectCard
+                        title="JN Creation"
+                        description="Handmade with Love, Personalized for You. A premium e-commerce platform for handcrafted gifts and a real-time bracelet customizer."
+                        tech={["Astro", "Tailwind CSS", "TypeScript", "React"]}
+                        image="/projects/jn-creation-home.webp"
+                        href="/work/jn-creation"
+                    />
+                </div>
+                <div class="reveal-up reveal-up-delay-3 md:col-span-2" data-project-item data-project-category="ai">
+                    <ProjectCard
+                        title="Chroma AI"
+                        description="Smarter analysis. Better decisions. A production-grade AI dashboard for predictive trading and market sentiment analysis."
+                        tech={["Next.js", "Python", "PyTorch", "OpenAI API"]}
+                        image="/projects/chroma-ai.webp"
+                        href="/work/ai-automation"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-32 border-t border-sage-200">
+            <div class="max-w-3xl mb-20 reveal-up">
+                <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-sage-400 mb-4">Services</h2>
+                <h3 class="text-4xl md:text-6xl font-bold tracking-tighter text-sage-900 leading-none">
+                    Practical solutions for a digital-first world.
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                {[
+                    {
+                        title: "Web Development",
+                        desc: "Building high-end, responsive websites with React and Astro. Focused on performance, SEO, and exceptional user experience.",
+                        icon: "01"
+                    },
+                    {
+                        title: "Prompt Engineering",
+                        desc: "Designing and optimizing complex AI prompts to deliver consistent, high-quality results from LLMs for business logic.",
+                        icon: "02"
+                    },
+                    {
+                        title: "AI Automation",
+                        desc: "Automating repetitive tasks by connecting AI models with your existing tools, saving hours of manual work every week.",
+                        icon: "03"
+                    }
+                ].map((service, i) => (
+                    <div class={`bg-white p-10 rounded-[2.5rem] border border-sage-100 shadow-sm hover:shadow-xl transition-all duration-500 reveal-up reveal-up-delay-${i+1} group`}>
+                        <div class="text-5xl font-extrabold text-sage-50 mb-6 group-hover:text-sage-100 transition-colors">{service.icon}</div>
+                        <h4 class="text-2xl font-bold text-sage-900 mb-4 tracking-tight">{service.title}</h4>
+                        <p class="text-sage-600 leading-relaxed">{service.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-32 border-t border-sage-200 reveal-up">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-sage-400 mb-4">Tech Stack</h2>
+                    <h3 class="text-4xl md:text-6xl font-bold tracking-tighter text-sage-900">
+                        Modern tools for modern solutions.
+                    </h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    {[
+                        "React", "Astro", "TypeScript", "Node.js", "Java",
+                        "Python", "Tailwind CSS", "Next.js", "MongoDB",
+                        "PostgreSQL", "Prompt Engineering", "OpenAI API",
+                        "Claude API", "Workflow Automation", "Git"
+                    ].map(skill => (
+                        <span class="px-6 py-3 bg-white border border-sage-100 rounded-full text-sage-700 font-bold text-sm tracking-tight hover:border-sage-400 hover:bg-sage-50 transition-all cursor-default">
+                            {skill}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 border-t border-sage-200 text-center reveal-up">
+            <div class="max-w-4xl mx-auto space-y-12">
+                <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-sage-400">Let's Connect</h2>
+                <h3 class="text-5xl md:text-9xl font-extrabold tracking-tighter text-sage-900 leading-[0.8] mb-12">
+                    Start a <br /> <span class="italic font-medium text-sage-400">Project.</span>
+                </h3>
+
+                <div class="space-y-6 pt-8">
+                    <p class="text-2xl text-sage-700 font-medium">Ready to build something amazing?</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <a href="mailto:kumarangullu4@gmail.com" class="text-4xl md:text-6xl font-bold text-sage-900 hover:text-sage-500 transition-colors tracking-tighter underline underline-offset-8 decoration-sage-200">
+                            kumarangullu4@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-8 pt-12">
+                    <a href="https://www.linkedin.com/in/kumaran-gullu-667b77309" target="_blank" rel="noopener" class="nav-link font-bold uppercase tracking-widest text-xs">LinkedIn</a>
+                    <a href="https://github.com/kumaran-0-7" target="_blank" rel="noopener" class="nav-link font-bold uppercase tracking-widest text-xs">GitHub</a>
+                    <a href="mailto:kumarangullu4@gmail.com" class="nav-link font-bold uppercase tracking-widest text-xs">Email</a>
+                </div>
+            </div>
+
+            <ContactForm title="Send a project note" />
+        </section>
+    </main>
+
+    <Footer />
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-up-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    </script>
+</BaseLayout>
+
+<style>
+    /* Helper classes for the reveal animation */
+    .reveal-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-up-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>

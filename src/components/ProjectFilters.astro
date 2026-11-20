@@ -1,0 +1,28 @@
+<div class="project-filters" role="group" aria-label="Filter projects" data-project-filters>
+    <button class="project-filter" type="button" data-project-filter="all" aria-pressed="true">All projects</button>
+    <button class="project-filter" type="button" data-project-filter="web" aria-pressed="false">Web</button>
+    <button class="project-filter" type="button" data-project-filter="ai" aria-pressed="false">AI &amp; automation</button>
+</div>
+<p class="sr-only" role="status" aria-live="polite" data-project-filter-status>3 projects shown.</p>
+
+<script>
+    const filters = [...document.querySelectorAll<HTMLButtonElement>("[data-project-filter]")];
+    const items = [...document.querySelectorAll<HTMLElement>("[data-project-item]")];
+    const status = document.querySelector<HTMLElement>("[data-project-filter-status]");
+
+    filters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+            const selected = filter.dataset.projectFilter ?? "all";
+            filters.forEach((button) => button.setAttribute("aria-pressed", String(button === filter)));
+
+            let visible = 0;
+            items.forEach((item) => {
+                const matches = selected === "all" || item.dataset.projectCategory === selected;
+                item.hidden = !matches;
+                if (matches) visible += 1;
+            });
+
+            if (status) status.textContent = visible + (visible === 1 ? " project shown." : " projects shown.");
+        });
+    });
+</script>

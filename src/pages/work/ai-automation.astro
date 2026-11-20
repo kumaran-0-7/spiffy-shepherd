@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { withBase } from "../../lib/paths";
+
+import "../../styles/global.css";
+---
+
+<BaseLayout title="Chroma AI | Kumaran">
+    <Nav />
+
+    <main class="container mx-auto px-6">
+        <a href={withBase("/work")} class="text-sage-600 font-bold tracking-tight inline-block mb-16 hover:gap-2 transition-all">
+            ← Back to Projects
+        </a>
+
+        <!-- Hero -->
+        <header class="flex flex-col-reverse md:flex-row items-start justify-between gap-16 mb-32">
+            <div class="md:w-1/2 space-y-8 reveal-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-400">Project 03</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-sage-900 leading-tight">
+                    Chroma AI
+                </h1>
+                <p class="text-xl text-sage-600 leading-relaxed max-w-xl">
+                    Smarter analysis. Better decisions. A production-grade AI dashboard for predictive trading and market sentiment analysis.
+                </p>
+                <div class="flex gap-4">
+                    <span class="btn-secondary opacity-50 cursor-not-allowed">Enterprise Project</span>
+                </div>
+            </div>
+            <div class="md:w-1/2 reveal-up reveal-up-delay-2">
+                <div class="relative bg-white aspect-[16/9] rounded-[2rem] overflow-hidden shadow-2xl border border-sage-100 float">
+                    <img src={withBase("/projects/chroma-ai.webp")} alt="Chroma AI Dashboard" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Overview -->
+        <section class="mb-32 reveal-up">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tighter text-sage-900 mb-8">Overview</h2>
+            <p class="text-lg text-sage-600 leading-relaxed max-w-2xl mb-8">
+                Chroma AI is a comprehensive suite for financial intelligence. It leverages advanced LLMs and predictive modeling to provide traders with real-time win rates, risk levels, and automated trade execution signals.
+            </p>
+            <p class="text-lg text-sage-600 leading-relaxed max-w-2xl mb-8">
+                The platform features a "High Confidence" AI Prediction engine that categorizes market moves into actionable insights, integrated with an AI Assistant for natural language querying of portfolio data.
+            </p>
+        </section>
+
+        <!-- Technical Modules -->
+        <section class="mb-32 reveal-up">
+            <h3 class="text-2xl font-bold text-sage-900 mb-8 tracking-tight">System Architecture</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-[2rem] border border-sage-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                    <h4 class="text-xl font-bold text-sage-900 mb-3">Predictive Engine</h4>
+                    <p class="text-sage-600 text-sm leading-relaxed">
+                        Real-time probability calculation for market trends with confidence interval mapping.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-[2rem] border border-sage-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                    <h4 class="text-xl font-bold text-sage-900 mb-3">NLP Assistant</h4>
+                    <p class="text-sage-600 text-sm leading-relaxed">
+                        Custom-tuned LLM agents for interpreting complex financial reports into simple summaries.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-[2rem] border border-sage-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                    <h4 class="text-xl font-bold text-sage-900 mb-3">Auto-Trade UI</h4>
+                    <p class="text-sage-600 text-sm leading-relaxed">
+                        Frictionless interface for setting up and monitoring automated execution strategies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="mb-32 reveal-up reveal-up-delay-2">
+            <h3 class="text-2xl font-bold text-sage-900 mb-8 tracking-tight">Confirmed Technologies</h3>
+            <div class="flex flex-wrap gap-4">
+                {["Next.js", "Python", "PyTorch", "OpenAI API", "Claude API", "PostgreSQL", "Redis", "Vector DB"].map((tech) => (
+                    <span class="px-4 py-2 bg-white border border-sage-200 rounded-lg text-sage-700 font-bold text-sm tracking-tight shadow-sm hover:border-sage-400 hover:bg-sage-50 transition-all cursor-default">
+                        {tech}
+                    </span>
+                ))}
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>

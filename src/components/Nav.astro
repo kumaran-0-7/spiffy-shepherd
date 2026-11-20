@@ -1,0 +1,92 @@
+---
+import { withBase } from "../lib/paths";
+
+const navLinks = [
+    { href: withBase("/#about"), label: "About" },
+    { href: withBase("/#skills"), label: "Skills" },
+    { href: withBase("/#projects"), label: "Projects" },
+    { href: withBase("/#services"), label: "Services" },
+    { href: withBase("/#contact"), label: "Contact" },
+];
+---
+
+<nav class="site-nav sticky top-0 z-50 bg-sage-50/90 backdrop-blur-md border-b border-sage-200" data-site-nav data-open="false">
+    <div class="site-nav__inner container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href={withBase("/#hero")} class="text-xl font-bold tracking-tighter text-sage-800" aria-label="Kumaran, home">
+            Kumaran<span class="text-sage-500">.</span>
+        </a>
+
+        <button
+            class="site-nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            aria-label="Open navigation menu"
+            data-nav-toggle
+        >
+            <span class="site-nav__toggle-icon" aria-hidden="true"><span></span><span></span></span>
+            <span>Menu</span>
+        </button>
+
+        <div class="site-nav__links" id="primary-navigation" data-nav-links>
+            {navLinks.map((link) => (
+                <a href={link.href} class="nav-link" data-nav-link>
+                    {link.label}
+                </a>
+            ))}
+        </div>
+    </div>
+</nav>
+
+<script>
+    const nav = document.querySelector<HTMLElement>("[data-site-nav]");
+    const toggle = nav?.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+    const links = [...(nav?.querySelectorAll<HTMLAnchorElement>("[data-nav-link]") ?? [])];
+
+    if (nav && toggle) {
+        const setOpen = (open: boolean) => {
+            nav.dataset.open = String(open);
+            toggle.setAttribute("aria-expanded", String(open));
+            toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+        };
+
+        toggle.addEventListener("click", () => setOpen(nav.dataset.open !== "true"));
+        links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && nav.dataset.open === "true") {
+                setOpen(false);
+                toggle.focus();
+            }
+        });
+
+        document.addEventListener("pointerdown", (event) => {
+            if (event.target instanceof Node && !nav.contains(event.target)) setOpen(false);
+        });
+
+        window.matchMedia("(min-width: 768px)").addEventListener("change", () => setOpen(false));
+
+        const sectionLinks = links
+            .map((link) => {
+                const hash = new URL(link.href, window.location.href).hash;
+                return { link, section: hash ? document.getElementById(hash.slice(1)) : null };
+            })
+            .filter((item): item is { link: HTMLAnchorElement; section: HTMLElement } => Boolean(item.section));
+
+        if ("IntersectionObserver" in window && sectionLinks.length) {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                const current = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+                if (!current) return;
+
+                sectionLinks.forEach(({ link, section }) => {
+                    if (section === current.target) link.setAttribute("aria-current", "location");
+                    else link.removeAttribute("aria-current");
+                });
+            }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
+
+            sectionLinks.forEach(({ section }) => sectionObserver.observe(section));
+        }
+    }
+</script>

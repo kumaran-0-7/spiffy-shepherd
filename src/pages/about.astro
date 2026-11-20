@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+import "../styles/global.css";
+---
+
+<BaseLayout title="About - My Portfolio" description="Learn more about me, my background, and my approach">
+    <Nav />
+
+    <main class="flex-1 container mx-auto px-4 py-20">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">About Me</h1>
+
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Design & Development</h2>
+                <p class="text-gray-400 mb-4">
+                    I'm a designer and developer passionate about creating meaningful digital experiences. With over 5 years of experience in both design systems and full-stack development, I bridge the gap between creativity and technical excellence.
+                </p>
+                <p class="text-gray-400">
+                    My work focuses on user-centered design, performant code, and systems that scale. I believe great products come from thoughtful iteration and collaboration.
+                </p>
+            </div>
+
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">What I Build</h2>
+                <ul class="space-y-3 text-gray-400">
+                    <li>• <strong>Design Case Studies</strong>: Deep dives into my design process and problem-solving approach</li>
+                    <li>• <strong>Full-Stack Projects</strong>: Interactive applications built with modern web technologies</li>
+                    <li>• <strong>Design Systems</strong>: Reusable component libraries and style guides</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Let's Work Together</h2>
+                <p class="text-gray-400 mb-4">
+                    I'm open to new opportunities, collaborations, and interesting projects.
+                </p>
+                <a
+                    href="mailto:you@example.com"
+                    class="inline-block px-6 py-3 border border-gray-600 text-sm font-medium rounded hover:border-gray-500 transition-colors">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</BaseLayout>

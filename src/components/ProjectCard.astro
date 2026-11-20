@@ -1,0 +1,44 @@
+---
+import { withBase } from "../lib/paths";
+
+const { title, description, href, tech = [], image = "/placeholder.png" } = Astro.props;
+---
+
+<div class="project-card group bg-white rounded-[2.5rem] border border-sage-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
+    <div class="relative overflow-hidden aspect-[16/10] bg-sage-100">
+        <img
+            src={withBase(image)}
+            alt={title}
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-sage-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    </div>
+
+    <div class="p-8">
+        <div class="flex flex-wrap gap-2 mb-6">
+            {tech.map((t: string) => (
+                <span class="px-3 py-1 bg-sage-50 text-sage-600 rounded-full text-[10px] font-bold uppercase tracking-widest border border-sage-100">
+                    {t}
+                </span>
+            ))}
+        </div>
+
+        <h3 class="text-2xl md:text-3xl font-bold tracking-tighter text-sage-900 mb-3 group-hover:text-sage-700 transition-colors">
+            {title}
+        </h3>
+        <p class="text-sage-600 leading-relaxed mb-8 line-clamp-3">
+            {description}
+        </p>
+
+        <a
+            href={withBase(href)}
+            class="inline-flex items-center gap-3 text-sage-900 font-bold tracking-tight group-hover:gap-5 transition-all duration-300"
+        >
+            View Project
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eaf1e5"/>
+      <stop offset="100%" stop-color="#dce5d7"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7faf5"/>
+    </linearGradient>
+    <linearGradient id="aura1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#91ad86"/>
+      <stop offset="100%" stop-color="#4a6345"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg1)"/>
+  <circle cx="1080" cy="120" r="220" fill="#c3d6bd" opacity="0.35"/>
+  <circle cx="120" cy="820" r="180" fill="#c3d6bd" opacity="0.25"/>
+
+  <!-- Browser frame -->
+  <rect x="80" y="90" width="1040" height="720" rx="24" fill="url(#card1)" stroke="#dce5d7" stroke-width="2"/>
+  <rect x="80" y="90" width="1040" height="56" rx="24" fill="#f2f7f4"/>
+  <rect x="80" y="122" width="1040" height="24" fill="#f2f7f4"/>
+  <circle cx="116" cy="118" r="7" fill="#c3d6bd"/>
+  <circle cx="142" cy="118" r="7" fill="#dce5d7"/>
+  <circle cx="168" cy="118" r="7" fill="#eaf1e5"/>
+  <rect x="210" y="106" width="420" height="24" rx="12" fill="#ffffff" stroke="#dce5d7"/>
+
+  <!-- Sidebar -->
+  <rect x="112" y="180" width="220" height="596" rx="16" fill="#f2f7f4"/>
+  <rect x="136" y="212" width="130" height="16" rx="8" fill="#91ad86"/>
+  <rect x="136" y="260" width="172" height="14" rx="7" fill="#dce5d7"/>
+  <rect x="136" y="296" width="150" height="14" rx="7" fill="#dce5d7"/>
+  <rect x="136" y="332" width="168" height="14" rx="7" fill="#c3d6bd"/>
+  <rect x="136" y="368" width="120" height="14" rx="7" fill="#dce5d7"/>
+  <rect x="136" y="404" width="160" height="14" rx="7" fill="#dce5d7"/>
+
+  <!-- XP bar -->
+  <rect x="136" y="700" width="172" height="10" rx="5" fill="#dce5d7"/>
+  <rect x="136" y="700" width="112" height="10" rx="5" fill="url(#aura1)"/>
+  <text x="136" y="684" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#4a6345">LEVEL 12</text>
+
+  <!-- Main: title -->
+  <text x="376" y="228" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#263d2c">Daily Challenge</text>
+  <text x="376" y="262" font-family="Inter, Arial, sans-serif" font-size="16" fill="#697568">Answer 20 questions to earn bonus XP</text>
+
+  <!-- Question card -->
+  <rect x="376" y="296" width="696" height="240" rx="20" fill="#ffffff" stroke="#dce5d7" stroke-width="2"/>
+  <text x="408" y="344" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#91ad86">QUESTION 04 / 20</text>
+  <text x="408" y="386" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#263d2c">Which data structure uses FIFO?</text>
+
+  <rect x="408" y="418" width="300" height="44" rx="12" fill="#f2f7f4" stroke="#dce5d7"/>
+  <text x="428" y="446" font-family="Inter, Arial, sans-serif" font-size="16" fill="#4a6345">A. Stack</text>
+
+  <rect x="408" y="474" width="300" height="44" rx="12" fill="#eaf1e5" stroke="#91ad86" stroke-width="2"/>
+  <text x="428" y="502" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#263d2c">B. Queue  ✓</text>
+
+  <rect x="732" y="418" width="300" height="44" rx="12" fill="#f2f7f4" stroke="#dce5d7"/>
+  <text x="752" y="446" font-family="Inter, Arial, sans-serif" font-size="16" fill="#4a6345">C. Tree</text>
+
+  <rect x="732" y="474" width="300" height="44" rx="12" fill="#f2f7f4" stroke="#dce5d7"/>
+  <text x="752" y="502" font-family="Inter, Arial, sans-serif" font-size="16" fill="#4a6345">D. Graph</text>
+
+  <!-- Leaderboard -->
+  <rect x="376" y="564" width="336" height="212" rx="20" fill="#ffffff" stroke="#dce5d7" stroke-width="2"/>
+  <text x="404" y="604" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" fill="#263d2c">Leaderboard</text>
+  <circle cx="416" cy="640" r="12" fill="#c3d6bd"/>
+  <rect x="440" y="632" width="120" height="12" rx="6" fill="#dce5d7"/>
+  <text x="672" y="644" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#4a6345">2,340</text>
+  <circle cx="416" cy="678" r="12" fill="#91ad86"/>
+  <rect x="440" y="670" width="140" height="12" rx="6" fill="#c3d6bd"/>
+  <text x="672" y="682" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#263d2c">2,180</text>
+  <circle cx="416" cy="716" r="12" fill="#dce5d7"/>
+  <rect x="440" y="708" width="104" height="12" rx="6" fill="#dce5d7"/>
+  <text x="672" y="720" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#697568">1,905</text>
+
+  <!-- Stats -->
+  <rect x="736" y="564" width="336" height="212" rx="20" fill="url(#aura1)"/>
+  <text x="764" y="604" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#dce5d7" letter-spacing="2">STREAK</text>
+  <text x="764" y="676" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff">14</text>
+  <text x="764" y="712" font-family="Inter, Arial, sans-serif" font-size="16" fill="#dce5d7">days in a row 🔥</text>
+</svg>

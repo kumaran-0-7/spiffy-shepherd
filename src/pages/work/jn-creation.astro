@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { withBase } from "../../lib/paths";
+
+import "../../styles/global.css";
+---
+
+<BaseLayout title="JN Creation | Kumaran">
+    <Nav />
+
+    <main class="container mx-auto px-6">
+        <a href={withBase("/work")} class="text-sage-600 font-bold tracking-tight inline-block mb-16 hover:gap-2 transition-all">
+            ← Back to Projects
+        </a>
+
+        <!-- Hero -->
+        <header class="flex flex-col-reverse md:flex-row items-start justify-between gap-16 mb-32">
+            <div class="md:w-1/2 space-y-8 reveal-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-400">Project 02</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-sage-900 leading-tight">
+                    JN Creation
+                </h1>
+                <p class="text-xl text-sage-600 leading-relaxed max-w-xl">
+                    Handmade with Love, Personalized for You. A premium e-commerce platform for handcrafted gifts, featuring a real-time bracelet customizer and curated collections.
+                </p>
+                <div class="flex gap-4">
+                    <a href="http://127.0.0.1:5173/" class="btn-primary" target="_blank">Live Site</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 reveal-up reveal-up-delay-2">
+                <div class="relative bg-white aspect-[16/9] rounded-[2rem] overflow-hidden shadow-2xl border border-sage-100 float">
+                    <img src={withBase("/projects/jn-creation-home.webp")} alt="JN Creation Home" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Gallery Section -->
+        <section class="mb-32 reveal-up">
+            <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-sage-400 mb-12">Interface Design</h2>
+            <div class="grid gap-12">
+                <div class="rounded-[2rem] overflow-hidden shadow-xl border border-sage-50">
+                    <img src={withBase("/projects/jn-creation-collections.webp")} alt="JN Creation Collections" class="w-full object-cover" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="mb-32 reveal-up">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tighter text-sage-900 mb-8">Overview</h2>
+            <p class="text-lg text-sage-600 leading-relaxed max-w-2xl mb-8">
+                JN Creations specializes in handmade gifts that celebrate relationships and milestones. The platform provides a seamless digital storefront for artisans to showcase their craft, from floral bouquets to custom ribbon crafts.
+            </p>
+            <p class="text-lg text-sage-600 leading-relaxed max-w-2xl mb-8">
+                The standout feature is the <strong>Bracelet Studio</strong>, allowing customers to design custom elastic bracelets online with instant live previews of beads, metal styles, and charms.
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section class="mb-32 reveal-up">
+            <div class="flex justify-between items-end mb-8">
+                <h3 class="text-2xl font-bold text-sage-900 tracking-tight">Key Experiences</h3>
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-400">Features</span>
+            </div>
+            <ul class="grid md:grid-cols-2 gap-6 space-y-6 max-w-3xl">
+                <li class="flex items-start gap-4 p-4 bg-white border border-sage-100 rounded-xl shadow-sm group hover:border-sage-300 transition-colors">
+                    <div class="flex h-8 w-8 items-center justify-center bg-sage-50 text-sage-500 rounded-lg mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-sage-900 mb-1">Live Bracelet Studio</h4>
+                        <p class="text-sage-500 text-sm">Interactive 3D-like customizer for bead and charm selection.</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-4 p-4 bg-white border border-sage-100 rounded-xl shadow-sm group hover:border-sage-300 transition-colors">
+                    <div class="flex h-8 w-8 items-center justify-center bg-sage-50 text-sage-500 rounded-lg mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8l4 4-4 4M8 12h7"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-sage-900 mb-1">Curated Collections</h4>
+                        <p class="text-sage-500 text-sm">Categorized browse experience for floral, hampers, and keepsakes.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="mb-32 reveal-up reveal-up-delay-2">
+            <h3 class="text-2xl font-bold text-sage-900 mb-8 tracking-tight">Technology Stack</h3>
+            <div class="flex flex-wrap gap-4">
+                {["Astro", "Tailwind CSS", "TypeScript", "React", "Node.js"].map((tech) => (
+                    <span class="px-4 py-2 bg-white border border-sage-200 rounded-lg text-sage-700 font-bold text-sm tracking-tight shadow-sm hover:border-sage-400 hover:bg-sage-50 transition-all cursor-default">
+                        {tech}
+                    </span>
+                ))}
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>

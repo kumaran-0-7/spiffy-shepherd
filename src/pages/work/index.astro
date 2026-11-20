@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import ProjectFilters from "../../components/ProjectFilters.astro";
+
+import "../../styles/global.css";
+---
+
+<BaseLayout title="Projects | Kumaran">
+    <Nav />
+
+    <main class="container mx-auto px-6">
+        <header class="py-20 md:py-32 reveal-up">
+            <span class="text-xs font-bold uppercase tracking-widest text-sage-400 mb-4 block">Archive</span>
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter text-sage-900 leading-[0.9] mb-8">
+                All <span class="italic font-medium text-sage-400">Projects.</span>
+            </h1>
+            <p class="text-xl text-sage-600 max-w-2xl leading-relaxed">
+                A collection of digital products, intelligent applications, and automation systems I've built.
+            </p>
+        </header>
+
+        <ProjectFilters />
+
+        <div class="grid md:grid-cols-2 gap-12 pb-32" data-project-grid>
+            <div class="reveal-up" data-project-item data-project-category="web">
+                <ProjectCard
+                    title="AptiQuest"
+                    description="An interactive, game-based educational website for college students that makes learning engaging and competitive through real-time challenges and rewards."
+                    tech={["React", "Node.js", "MongoDB", "Socket.io"]}
+                    image="/projects/attitude-learning.webp"
+                    href="/work/aptiquest"
+                />
+            </div>
+            <div class="reveal-up reveal-up-delay-2" data-project-item data-project-category="web">
+                <ProjectCard
+                    title="JN Creation"
+                    description="A high-performance e-commerce platform for boutique jewelry, featuring real-time inventory management and a polished shopping experience."
+                    tech={["Astro", "Tailwind CSS", "TypeScript", "Stripe"]}
+                    image="/projects/lume-bracelet.webp"
+                    href="/work/jn-creation"
+                />
+            </div>
+            <div class="reveal-up reveal-up-delay-3 md:col-span-2" data-project-item data-project-category="ai">
+                <ProjectCard
+                    title="AI Automation & Prompt Engineering"
+                    description="A collection of AI-powered workflows, automation experiments, and prompt engineering projects that demonstrate intelligent application integrations."
+                    tech={["OpenAI API", "Claude API", "Python", "LangChain"]}
+                    image="/projects/ai-automation-preview.webp"
+                    href="/work/ai-automation"
+                />
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</BaseLayout>

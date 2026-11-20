@@ -1,0 +1,39 @@
+---
+import { withBase } from "../lib/paths";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-sage-200 py-12 mt-auto bg-white">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+            <a href={withBase("/")} class="text-2xl font-bold tracking-tighter text-sage-900">
+                Kumaran<span class="text-sage-400">.</span>
+            </a>
+            <p class="text-sm text-sage-400 mt-2 font-medium uppercase tracking-widest">
+                Full-Stack Developer & AI Engineer
+            </p>
+        </div>
+
+        <div class="flex gap-8 text-sm font-bold uppercase tracking-widest text-sage-500">
+            <a href="https://www.linkedin.com/in/kumaran-gullu-667b77309" target="_blank" rel="noopener" class="nav-link">
+                LinkedIn
+            </a>
+            <a href="https://github.com/kumaran-0-7" target="_blank" rel="noopener" class="nav-link">
+                GitHub
+            </a>
+            <a href="mailto:kumarangullu4@gmail.com" class="nav-link">
+                Email
+            </a>
+        </div>
+
+        <div class="text-center md:text-right">
+            <p class="text-sm text-sage-400 font-medium">
+                &copy; {currentYear} Kumaran. All rights reserved.
+            </p>
+            <p class="text-xs text-sage-300 mt-1">
+                Built with Astro & Tailwind CSS
+            </p>
+        </div>
+    </div>
+</footer>
